@@ -1,0 +1,111 @@
+{
+  "plugin_type": "extractors",
+  "name": "tap-jira",
+  "namespace": "tap_jira",
+  "variant": "singer-io",
+  "label": "Jira",
+  "docs": "https://www.matatika.com/data-details/tap-jira/",
+  "repo": "https://github.com/singer-io/tap-jira",
+  "pip_url": "git+https://github.com/singer-io/tap-jira.git",
+  "description": "Jira is a project management tool.\n\nJira is a software tool developed by Atlassian that is used for project management, issue tracking, and bug tracking. It allows teams to plan, track, and manage tasks and projects in an agile manner, with features such as customizable workflows, scrum boards, and kanban boards. Jira also offers reporting and analytics capabilities, allowing teams to track progress and identify areas for improvement. It is widely used in software development, but can be used for any type of project management.\n### Prerequisites\nThe Username and Password are typically the same credentials used to log in to Jira. The Base URL is the URL of the Jira instance you are connecting to.\n\nTo obtain the OAuth Client Secret and OAuth Client ID, you will need to create an OAuth application in Jira. This can typically be done in the Jira settings or administration panel.\n\nTo obtain the Access Token, Cloud ID, and Refresh Token, you will need to follow the OAuth authentication flow. This typically involves redirecting the user to a Jira login page, where they will be prompted to grant access to the OAuth application. Once access is granted, the application will receive an Access Token, Cloud ID, and Refresh Token.\n\nThe Start Date and User Agent are not typically required settings for connecting to Jira.",
+  "logo_url": "https://app.matatika.com/assets/logos/extractors/jira.png",
+  "capabilities": [
+    "properties",
+    "discover",
+    "state"
+  ],
+  "settings": [
+    {
+      "name": "username",
+      "kind": "string",
+      "label": "Username",
+      "description": "The username used to authenticate with Jira.",
+      "hidden": false,
+      "sensitive": false,
+      "protected": false
+    },
+    {
+      "name": "password",
+      "kind": "string",
+      "label": "Password",
+      "description": "The password used to authenticate with Jira.",
+      "hidden": false,
+      "sensitive": true,
+      "protected": false
+    },
+    {
+      "name": "base_url",
+      "kind": "string",
+      "label": "Base URL",
+      "description": "The URL of the Jira instance to connect to.",
+      "placeholder": "Ex. \"https://mycompany.atlassian.net\"",
+      "hidden": false,
+      "sensitive": false,
+      "protected": false
+    },
+    {
+      "name": "oauth_client_secret",
+      "kind": "string",
+      "label": "OAuth Client Secret",
+      "description": "The secret key used to authenticate with Jira using OAuth.",
+      "hidden": false,
+      "sensitive": true,
+      "protected": false
+    },
+    {
+      "name": "oauth_client_id",
+      "kind": "string",
+      "label": "OAuth Client ID",
+      "description": "The client ID used to authenticate with Jira using OAuth.",
+      "hidden": false,
+      "sensitive": false,
+      "protected": false
+    },
+    {
+      "name": "access_token",
+      "kind": "string",
+      "label": "Access Token",
+      "description": "The access token used to authenticate with Jira using OAuth.",
+      "hidden": false,
+      "sensitive": true,
+      "protected": false
+    },
+    {
+      "name": "cloud_id",
+      "kind": "string",
+      "label": "Cloud ID",
+      "description": "The unique identifier for the Jira Cloud instance.",
+      "hidden": false,
+      "sensitive": false,
+      "protected": false
+    },
+    {
+      "name": "refresh_token",
+      "kind": "string",
+      "label": "Refresh Token",
+      "description": "The refresh token used to obtain a new access token when the current one expires.",
+      "hidden": false,
+      "sensitive": true,
+      "protected": false
+    },
+    {
+      "name": "start_date",
+      "kind": "date_iso8601",
+      "label": "Start Date",
+      "description": "The date from which to start retrieving data from Jira.",
+      "hidden": false,
+      "sensitive": false,
+      "protected": false
+    },
+    {
+      "name": "user_agent",
+      "kind": "string",
+      "value": "tap-jira via Meltano",
+      "label": "User Agent",
+      "description": "The user agent string to use when making requests to Jira.",
+      "hidden": false,
+      "sensitive": false,
+      "protected": false
+    }
+  ]
+}
